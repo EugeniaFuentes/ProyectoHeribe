@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Restaurante</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="css/menu.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1 id="nombre-restaurante">NOMBRE DEL RESTAURANTE</h1>
+        <div class="buscador">
+            <div class="input-group w-50">
+                <input type="text" class="form-control" placeholder="Buscar producto">
+                <button class="btn btn-secondary" type="button">
+                <i class="bi bi-search"></i> <!-- Ícono de lupa de Bootstrap Icons -->
+            </button>
+        </div>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Menu Section -->
+            <div class="col-md-8">
+                <h4>Comida</h4>
+                <div class="row menu-section">
+                    <div class="col-4 menu-item">
+                        
+                        <button class="btn btn-warning w-100" onclick="showCategoryModal('Trancas', 50, ['Pollo', 'Relleno', 'Carnitas'])">
+                            <img src="img/btnTrancas.png" alt="Trancas">
+                            <span>Trancas</span>
+                        </button>
+                    </div>
+                    <div class="col-4 menu-item">
+                        
+                        <button class="btn btn-warning w-100" onclick="showCategoryModal('Panuchos', 40, ['Pollo', 'Relleno', 'Cochinita'])">
+                            <img src="img/btnPanuchos.png" alt="Panuchos">
+                            <span>Panuchos</span>
+                        </button>
+                    </div>
+                    <div class="col-4 menu-item">
+                        <button class="btn btn-warning w-100" onclick="showCategoryModal('Tacos', 30, ['Pastor', 'Bistec', 'Chorizo'])">
+                            <img src="img/btnTacos.webp" alt="Tacos">
+                            <span>Tacos</span>
+                        </button>
+                    </div>
+                    <div class="col-4 menu-item">
+                        <button class="btn btn-warning w-100" onclick="showCategoryModal('Tortas', 45, ['Cubana', 'Jamon', 'Milanesa'])">
+                            <img src="img/btnTortas.png" alt="Tortas">
+                            <span>Tortas</span>
+                        </button>
+                    </div>
+                    <div class="col-4 menu-item">
+                        <button class="btn btn-warning w-100" onclick="showCategoryModal('Tamales', 20, ['Rajas', 'Verde', 'Dulce'])">
+                            <img src="img/btnTamales.png" alt="Tamales">
+                            <span>Tamales</span>
+                        </button>
+                    </div>
+                    <div class="col-4 menu-item">
+                        <button class="btn btn-warning w-100" onclick="showCategoryModal('3x100', 100, ['Pollo', 'Res', 'Cochinita'])">
+                            <img src="img/btnBlanco.png" alt="3x100">
+                            <span>3 x $100</span>
+                        </button>
+                    </div>
+                    <h4>Bebidas</h4>
+                    <div class="col-4 menu-item">
+                        <button class="btn btn-warning w-100" onclick="showCategoryModal('Naturales', 20, ['Naranja', 'Limon', 'Piña'])">
+                            <img src="img/btnNaturales.png" alt="Naturales">
+                            <span>Naturales</span>
+                        </button>
+                    </div>
+                    <div class="col-4 menu-item">
+                        <button class="btn btn-warning w-100" onclick="showCategoryModal('Refrescos', 15, ['Coca Cola', 'Pepsi', 'Sprite'])">
+                            <img src="img/btnRefrescos.png" alt="Refrescos">
+                            <span>Refrescos</span>
+                        </button>
+                    </div>
+                    <div class="col-4 menu-item">
+                        <button class="btn btn-warning w-100" onclick="showCategoryModal('Reca', 25, ['Salsa', 'Chiltomate', 'Habanero'])">
+                            <img src="img/btnReca.png" alt="Reca">
+                            <span>Reca</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Section -->
+            <div class="col-md-4">
+                <div class="order-summary">
+                    <div class="header-bar">
+                        <h5>Orden #<span id="order-number">01</span></h5>
+                        <h5>Folio: <span id="folio-number">01</span></h5>
+                    </div>
+                    <input type="text" class="form-control mb-2" placeholder="Nombre del cliente" id="client-name">
+                    <div id="order-items"></div>
+                    <h5>Total: $<span id="total-price">0</span></h5>
+                    <button class="btn btn-success w-100 agregar" onclick="submitOrder()">Agregar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Categories -->
+    <div class="modal fade" id="categoryModal" tabindex="-1" aria-labelledby="categoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="categoryModalLabel">Seleccione una opción</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="category-options" class="d-flex flex-column"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de éxito -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">¡Éxito!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    La orden se ha agregado correctamente.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    let order = [];
+    let orderNumber = 1;
+    let folioNumber = 1;
+
+    // Función para mostrar las categorías del producto
+    function showCategoryModal(product, price, categories) {
+        const modal = new bootstrap.Modal(document.getElementById('categoryModal'));
+        const categoryOptions = document.getElementById('category-options');
+        categoryOptions.innerHTML = '';
+
+        categories.forEach(category => {
+            const button = document.createElement('button');
+            button.classList.add('btn', 'btn-warning', 'mb-2');
+            button.textContent = category;
+            button.onclick = () => {
+                addToOrder(`${product} (${category})`, price);
+                modal.hide();  // Cerrar modal después de agregar el producto
+            };
+            categoryOptions.appendChild(button);
+        });
+
+        modal.show();
+    }
+
+    // Agregar producto a la orden
+    function addToOrder(name, price) {
+        const existingItem = order.find(item => item.name === name);
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            order.push({ name, price, quantity: 1 });
+        }
+        updateOrderSummary();
+    }
+
+    function updateOrderSummary() {
+    const orderItems = document.getElementById('order-items');
+    const totalPrice = document.getElementById('total-price');
+    orderItems.innerHTML = '';
+    let total = 0;
+
+    order.forEach((item, index) => {
+        total += item.price * item.quantity;
+
+        const div = document.createElement('div');
+        div.classList.add('d-flex', 'justify-content-between', 'align-items-center', 'mb-2');
+        div.innerHTML = `
+            <div>${item.name} - $${item.price} x ${item.quantity}</div>
+            <div>
+                <button class="btn btn-sm btn-danger" onclick="decreaseQuantity(${index})">-</button>
+                <button class="btn btn-sm btn-success" onclick="increaseQuantity(${index})">+</button>
+            </div>
+        `;
+        orderItems.appendChild(div);
+    });
+
+    // Asegúrate de solo agregar el signo de dólar una vez
+    totalPrice.innerText = `${total.toFixed(2)}`;
+}
+
+
+    // Aumentar la cantidad de un producto en la orden
+    function increaseQuantity(index) {
+        order[index].quantity++;
+        updateOrderSummary();
+    }
+
+    // Disminuir la cantidad de un producto en la orden
+    function decreaseQuantity(index) {
+        if (order[index].quantity > 1) {
+            order[index].quantity--;
+        } else {
+            order.splice(index, 1);
+        }
+        updateOrderSummary();
+    }
+
+    // Función para enviar la orden
+    function submitOrder() {
+        const clientName = document.getElementById('client-name').value;
+        if (!clientName || order.length === 0) {
+            alert('Por favor, agrega productos y el nombre del cliente.');
+            return;
+        }
+
+        // Mostrar mensaje de éxito
+        alert('¡Orden agregada con éxito!');
+
+        // Mostrar la información de la orden en la consola
+        console.log({
+            orderNumber: formatOrderNumber(orderNumber),
+            folioNumber: formatFolioNumber(folioNumber),
+            clientName,
+            order
+        });
+
+        // Resetear la orden después de agregarla
+        resetOrder();
+    }
+
+    // Resetear la orden y actualizar los números de orden
+    function resetOrder() {
+        order = [];
+        document.getElementById('order-items').innerHTML = '';
+        document.getElementById('total-price').innerText = '0.00'; // Resetear el total
+        document.getElementById('client-name').value = '';
+        orderNumber++;
+        folioNumber++;
+        document.getElementById('order-number').innerText = formatOrderNumber(orderNumber);
+        document.getElementById('folio-number').innerText = formatFolioNumber(folioNumber);
+    }
+
+    // Función para formatear el número de orden con un cero si es menor que 10
+    function formatOrderNumber(number) {
+        return number < 10 ? `0${number}` : number;
+    }
+
+    // Función para formatear el número de folio con un cero si es menor que 10
+    function formatFolioNumber(number) {
+        return number < 10 ? `0${number}` : number;
+    }
+</script>
+
+</body>
+</html>

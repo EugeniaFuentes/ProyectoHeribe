@@ -1,0 +1,58 @@
+/* Fondo para cubrir toda la pantalla */
+.bg-image {
+  background-image: url('../img/login.png'); 
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center; 
+  position: relative; 
+}
+
+/* Contenedor del texto */
+.text-container {
+  position: absolute; 
+  top: 5rem; 
+  left: 5rem; 
+}
+
+/* Estilos del texto*/
+#bienvenida {
+  font-size: 2.5rem;
+  font-family: Ramaraja;
+  text-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 0.7); /* 2px y 8px a rem */
+  margin: 0;
+}
+
+#nombre-restaurante {
+  font-size: 3.5rem;
+  color: #ffffff;
+  max-width: 30rem; 
+  white-space: normal; 
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+}
+
+/* Caja del formulario */
+.login-box {
+  width: 100%;
+  max-width: 18.75rem; 
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 1.5625rem; /* 25px a rem */
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.3); 
+  margin-left: auto;
+  margin-right: 5rem; 
+  position: relative;
+}
+
+/* Botones */
+button {
+  background-color: #eed14e;
+  border: none;
+  color: white;
+}
+
+button:hover {
+  background-color: #e8ae2f;
+}
