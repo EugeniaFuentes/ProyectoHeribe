@@ -20,6 +20,10 @@ body {
     font-size: 2.5rem;
     font-family: Ramaraja;
 }
+.right-side{
+    text-align: right;
+}
+
 .container{
     background-color:#FFBD59;
 }
@@ -77,11 +81,14 @@ body {
 .w-100{
     margin-bottom: 30px;
     margin-top: 20px;
-    
 }
-
 .agregar{
     font-weight: bold;;
     background-color: #f88112;
     border-color: rgb(231, 87, 30);
+    margin-left: auto;
+}
+.agregar:hover{
+    background-color: #351a0d;
+    border-color: #351a0d;
 }

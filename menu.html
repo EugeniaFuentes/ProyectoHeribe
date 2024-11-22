@@ -12,14 +12,20 @@
 <body>
     <!-- Header -->
     <div class="header">
-        <h1 id="nombre-restaurante">NOMBRE DEL RESTAURANTE</h1>
+        <div class="d-flex justify-content-between align-items-center">
+            <h1 id="nombre-restaurante">NOMBRE DEL RESTAURANTE</h1>
+            <div class="right-buttons d-flex gap-2">
+                <button class="btn btn-primary" onclick="goToChefView()">Vista Chef</button>
+                <button class="btn btn-secondary" onclick="goToHostView()">Vista Host</button>
+            </div>
+        </div>
         <div class="buscador">
             <div class="input-group w-50">
                 <input type="text" class="form-control" placeholder="Buscar producto">
                 <button class="btn btn-secondary" type="button">
-                <i class="bi bi-search"></i> <!-- Ícono de lupa de Bootstrap Icons -->
-            </button>
-        </div>
+                    <i class="bi bi-search"></i> <!-- Ícono de lupa de Bootstrap Icons -->
+                </button>
+            </div>
         </div>
     </div>
 
@@ -33,7 +39,7 @@
                     <div class="col-4 menu-item">
                         
                         <button class="btn btn-warning w-100" onclick="showCategoryModal('Trancas', 50, ['Pollo', 'Relleno', 'Carnitas'])">
-                            <img src="img/btnTrancas.png" alt="Trancas">
+                            <img src="img/btnTrancas.webp" alt="Trancas">
                             <span>Trancas</span>
                         </button>
                     </div>
@@ -58,13 +64,13 @@
                     </div>
                     <div class="col-4 menu-item">
                         <button class="btn btn-warning w-100" onclick="showCategoryModal('Tamales', 20, ['Rajas', 'Verde', 'Dulce'])">
-                            <img src="img/btnTamales.png" alt="Tamales">
+                            <img src="img/btnTamales.webp" alt="Tamales">
                             <span>Tamales</span>
                         </button>
                     </div>
                     <div class="col-4 menu-item">
                         <button class="btn btn-warning w-100" onclick="showCategoryModal('3x100', 100, ['Pollo', 'Res', 'Cochinita'])">
-                            <img src="img/btnBlanco.png" alt="3x100">
+                            <img src="img/btnTresPorCien.webp" alt="3x100">
                             <span>3 x $100</span>
                         </button>
                     </div>
@@ -99,7 +105,8 @@
                     </div>
                     <input type="text" class="form-control mb-2" placeholder="Nombre del cliente" id="client-name">
                     <div id="order-items"></div>
-                    <h5>Total: $<span id="total-price">0</span></h5>
+                    <hr>
+                    <h5><strong>Total: $<span id="total-price">0</span></strong></h5>
                     <button class="btn btn-success w-100 agregar" onclick="submitOrder()">Agregar</button>
                 </div>
             </div>
