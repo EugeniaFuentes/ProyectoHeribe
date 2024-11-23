@@ -1,0 +1,167 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFBD59;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.header {
+    background-image: url('../img/header.png');
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+#nombre-restaurante {
+    font-size: 2.5rem;
+    font-family: Ramaraja;
+}
+
+.right-buttons button {
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+    background-color: #ffffff00;
+    border: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-button{
+    height: 80px;
+    width: 80px;
+}
+
+/* Orders Container */
+.orders-container {
+    display: flex;
+    justify-content: center; /* Centrado de las órdenes */
+    margin: 20px auto;
+    gap: 20px;
+    overflow-x: hidden;
+    width: 80%; /* Ajustado para mostrar dos órdenes */
+    padding-bottom: 10px; /* Reducido para evitar que las órdenes se tapen */
+    position: relative;
+    margin-top:5%;
+}
+
+/* Flechas para Navegar entre Órdenes */
+.navigation-arrows {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 1;
+    padding: 0 40px;
+}
+
+/* Estilo de las flechas */
+.navigation-arrows .btn {
+    font-size: 18px;
+    padding: 20px 10px; /* Tamaño de las flechas */
+    border-radius: 10px;
+    background-color: #e65a0a;
+    color: white;
+    border: none;
+}
+
+/* Estilo de las órdenes */
+.order-box {
+    width: 50%;
+    padding: 25px;
+    background-color: #fce3bf;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones dentro de cada orden */
+.order-box .action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.order-box .action-buttons button {
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+}
+
+.order-box .action-buttons .btn-danger {
+    background-color: #f44336;
+}
+
+.order-box .action-buttons button:hover {
+    opacity: 0.8;
+}
+
+/* Línea debajo de los productos */
+.separator {
+    height: 3px;
+    background-color: #000;
+    margin: 10px 0;
+}
+
+/* Alineación de fecha, hora y total en horizontal */
+.order-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* Estilos para los productos */
+.order-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.item {
+    padding: 5px 15px;
+    background-color: white;
+    border-radius: 50px;
+    margin: 5px;
+}
+
+
+/* Contenedor para el mensaje */
+.message-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+    font-size: 1.2rem;
+    text-align: center;
+    z-index: 9999;
+}
+.status  {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: rgb(82, 40, 13);
+    text-align: center;
+}
