@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>Total:</strong> ${order.total}</p>
                 </div>
                 <div class="action-buttons">
-                    <button class="btn btn-success accept-btn">Aceptar</button>
+                    <button class="btn btn-success accept-btn">Listo</button>
                     <button class="btn btn-danger cancel-btn">Cancelar</button>
                     <span class="status" style="display:none;"></span>
                 </div>
