@@ -21,16 +21,12 @@ body {
     font-family: Ramaraja;
 }
 .views-button{
-    height: 40px;
-    width: 40px;
-}
-.right-side{
-    text-align: right;
+    height: 55px;
+    width: 55px;
 }
 .container{
     background-color:#FFBD59;
 }
-
 .menu-item img {
     width: 200px;
     height: 170px;
@@ -58,20 +54,26 @@ body {
     
 }
 .right-buttons {
-    position: absolute;
-    right: 20px;
-    top: 20px;
+    display: flex;
+    flex-direction: column; /* Cambiar de fila a columna */
+    gap: 20px; /* Espacio entre los botones */
+    align-items: center; 
+    
 }
 .right-buttons button {
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    background-color: #d9d9d9;
+    height: 70px;
+    width: 70px;
+    background-color: #ffffff;
     border: none;
     font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.right-buttons button:hover{
+    background-color: #f3be2b;
+    border-color: #351a0d;
 }
 .order-item {
     display: flex;
