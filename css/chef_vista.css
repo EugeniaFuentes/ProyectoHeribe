@@ -1,4 +1,4 @@
-/* General */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #FFBD59;
@@ -6,7 +6,6 @@ body {
     padding: 0;
 }
 
-/* Header */
 .header {
     background-image: url('../img/header.png');
     background-size: cover;
@@ -38,20 +37,20 @@ body {
     width: 80px;
 }
 
-/* Orders Container */
+/* Contendor de las ordenes */
 .orders-container {
     display: flex;
-    justify-content: center; /* Centrado de las órdenes */
+    justify-content: center;
     margin: 20px auto;
     gap: 20px;
     overflow-x: hidden;
     width: 80%; /* Ajustado para mostrar dos órdenes */
-    padding-bottom: 10px; /* Reducido para evitar que las órdenes se tapen */
+    padding-bottom: 10px; 
     position: relative;
     margin-top:5%;
 }
 
-/* Flechas para Navegar entre Órdenes */
+/* Flechas para navegar entre ordenes */
 .navigation-arrows {
     position: absolute;
     top: 60%;
@@ -62,16 +61,18 @@ body {
     transform: translateY(-50%);
     z-index: 1;
     padding: 0 40px;
+    height: 20%;
 }
 
 /* Estilo de las flechas */
 .navigation-arrows .btn {
-    font-size: 18px;
-    padding: 20px 10px; /* Tamaño de las flechas */
+    font-size: 30px;
+    padding: 20px 10px; 
     border-radius: 10px;
     background-color: #e65a0a;
     color: white;
     border: none;
+
 }
 
 /* Estilo de las órdenes */
@@ -127,7 +128,6 @@ body {
     margin-top: 10px;
 }
 
-/* Estilos para los productos */
 .order-items {
     display: flex;
     flex-wrap: wrap;
@@ -140,7 +140,6 @@ body {
     border-radius: 50px;
     margin: 5px;
 }
-
 
 /* Contenedor para el mensaje */
 .message-container {
