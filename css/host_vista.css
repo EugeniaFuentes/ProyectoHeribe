@@ -23,19 +23,20 @@ body {
     border-radius: 50%;
     height: 90px;
     width: 90px;
-    background-color: #ffffff00;
+    background-color: #eec588;
     border: none;
     font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-.menu-button {
-    height: 80px;
-    width: 80px;
+.btn-dir:hover{
+    background-color: #ff9100;
 }
-
+.menu-button {
+    height: 60px;
+    width: 60px;
+}
 
 .input-group {
     width: 50%;
