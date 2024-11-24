@@ -16,10 +16,16 @@ body {
 .header .search-bar {
     margin-top: 20px;
 }
+.nombreRest{
+    margin-top: 10%;
+}
 #nombre-restaurante{
     font-size: 2.5rem;
     font-family: Ramaraja;
-    margin-top: 3rem;
+}
+.buscador{
+    margin-top: 0%;
+    
 }
 .views-button{
     height: 55px;
@@ -58,7 +64,7 @@ body {
     display: flex;
     flex-direction: column; /* Cambiar de fila a columna */
     gap: 20px; /* Espacio entre los botones */
-    align-items: center; 
+    align-items: center;
     
 }
 .right-buttons button {

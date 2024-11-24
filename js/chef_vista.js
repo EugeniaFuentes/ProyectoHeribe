@@ -105,3 +105,17 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".left-arrow").addEventListener("click", () => navigateOrders("left"));
     document.querySelector(".right-arrow").addEventListener("click", () => navigateOrders("right"));
 });
+
+// Función para cerrar sesión
+function logout() {
+    if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
+    localStorage.clear();
+    sessionStorage.clear();
+    window.location.href = 'login.html';
+    }
+}
+
+// Código ejecutable al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+// Cualquier inicialización necesaria
+});

@@ -56,7 +56,7 @@ let order = [];
 
     // Asegúrate de solo agregar el signo de dólar una vez
     totalPrice.innerText = `${total.toFixed(2)}`;
-}
+    }
 
 
     // Aumentar la cantidad de un producto en la orden
@@ -119,3 +119,17 @@ let order = [];
     function formatFolioNumber(number) {
         return number < 10 ? `0${number}` : number;
     }
+
+    // Función para cerrar sesión
+    function logout() {
+        if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
+        localStorage.clear();
+        sessionStorage.clear();
+        window.location.href = 'login.html';
+        }
+    }
+
+    // Código ejecutable al cargar la página
+    document.addEventListener('DOMContentLoaded', () => {
+    // Cualquier inicialización necesaria
+    });

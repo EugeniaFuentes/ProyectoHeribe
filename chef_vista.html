@@ -13,17 +13,23 @@
     <!-- Encabezado -->
     <div class="header">
         <div class="d-flex justify-content-between align-items-center">
-            <h1 id="nombre-restaurante">NOMBRE DEL RESTAURANTE</h1>
+            <div class="nombreRest">
+                <h1 id="nombre-restaurante">NOMBRE DEL RESTAURANTE</h1>
+            </div>
             <div class="right-buttons d-flex gap-2">
                 <button class="btn-dir " onclick="location.href='menu.html'">
                     <img class="menu-button" src="img/moreIcon.png" alt="menu">
                 </button>
+                <button class="views-button" onclick="logout()">
+                    <img class="logout-button" src="img/cerrarSesionIcon.png" alt="Host Vista">
+                </button>
+                
             </div>
         </div>
         <div class="buscador">
           <div class="input-group w-50">
               <input type="text" class="form-control" placeholder="Buscar producto">
-              <button class="btn btn-secondary" type="button">
+              <button class="btn btn-secondary buscadorbtn" type="button">
                   <i class="bi bi-search"></i> <!-- Ícono de lupa de Bootstrap Icons -->
               </button>
           </div>
